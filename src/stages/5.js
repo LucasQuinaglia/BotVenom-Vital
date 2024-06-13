@@ -41,8 +41,7 @@ export const finalStage = {
           name: 'Alex'
         });
         return {
-          message,
-          nextStage: STAGES.DOUBT,
+          message
         };
       },
       2: async () => {
@@ -56,8 +55,7 @@ export const finalStage = {
           name: 'Daniel'
         });
         return {
-          message,
-          nextStage: STAGES.DOUBT,
+          message
         };
       },
       3: async () => {
@@ -66,8 +64,7 @@ export const finalStage = {
           Só aguardar um pouco que ela te atende assim que possível. 📲
         `;
         return {
-          message,
-          nextStage: STAGES.DOUBT,
+          message
         };
       },
     };
@@ -88,6 +85,7 @@ export const finalStage = {
         to: from,
         message: '🔚 *Atendimento encerrado* 🔚',
       });
+      return;
     }
 
     storage[from].finalStage.endsIn = new Date().getTime() + 60000; // mais 1 minuto de inatividade
