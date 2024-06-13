@@ -5,7 +5,7 @@
 <p align="center"></p>
 <h1 align="center">
     <a href="https://nodejs.org/en/">🔗 NodeJS</a>
-    <a href="https://www.npmjs.com/package/venom-bot">🧠 Venom Bot</a>
+    <a href="https://www.npmjs.com/package/venom-bot">🕷 Venom Bot</a>
 </h1>
 <p align="center"> Projeto criado com o intuito de auxiliar nas demandas de clientes da empresa Vital Equipamentos no WhatsApp.</p>
 <br>
