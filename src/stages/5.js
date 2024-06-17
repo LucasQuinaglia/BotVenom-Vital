@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import { VenomBot } from '../venom.js';
 import { storage } from '../storage.js';
 import { STAGES } from './index.js';
@@ -19,19 +20,27 @@ export const stageAttend = {
       console.log('Contact:', contact);
 
       // Crie a lista de dados
-      const dataList = [`👤 Cliente: ${contact}`];
+      const dataList = [`👤 Cliente: ${contact.name}, ${storage[from].stage}`];
 
-      // Converter a lista para uma string JSON
+      // Caminho do arquivo original
+      const originalFilePath = 'C:\\Users\\lucas_xln2bob\\Desktop\\BotVenom-Vital\\src\\stages\\data.json';
+
+      // Caminho do arquivo temporário
+      const tempFilePath = path.join(path.dirname(originalFilePath), 'tempData.json');
+
+      // Dados a serem salvos
       const jsonData = JSON.stringify(dataList, null, 2);
 
-      // Escreva o arquivo JSON
-      const filePath = 'C:\\Users\\lucas_xln2bob\\Desktop\\BotVenom-Vital\\src\\stages\\data.json';
-      fs.writeFileSync(filePath, jsonData, (err) => {
-        if (err) {
-          console.error('Erro ao escrever o arquivo:', err);
-        } else {
-          console.log('Data written to file:', filePath);
-        }
-      });
+      try {
+        // Escreva os dados no arquivo temporário
+        fs.writeFileSync(tempFilePath, jsonData);
+
+        // Renomeie o arquivo temporário para o nome original
+        fs.renameSync(tempFilePath, originalFilePath);
+
+        console.log('✅ Dados salvos com sucesso!');
+      } catch (err) {
+        console.error('Erro ao salvar os dados:', err);
+      }
   },
 }
