@@ -11,17 +11,29 @@
 <br>
 <h1 align="center">
   Welcome
+  <br>
   <img alt="Welcome" title="Welcome" src="./assets/welcome.png" />
+  <br>
   Menu
+  <br>
   <img alt="Menu" title="Menu" src="./assets/budget.png" />
+  <br>
   Order
+  <br>
   <img alt="Order" title="Order" src="./assets/attend.png" />
+  <br>
   Address
+  <br>
   <img alt="Address" title="Address" src="./assets/address.png" />
+  <br>
   Bill
+  <br>
   <img alt="Bill" title="Bill" src="./assets/bill.png" />
+  <br>
   Assistant
+  <br>
   <img alt="Assistant" title="Assistant" src="./assets/assistant.png" />
+  <br>
 </h1>
 
 ### Pré-requisitos
