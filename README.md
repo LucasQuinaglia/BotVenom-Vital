@@ -22,10 +22,6 @@
   <br>
   <img alt="Attend" title="Attend" src="./assets/attend.png" />
   <br>
-  Address
-  <br>
-  <img alt="Address" title="Address" src="./assets/address.png" />
-  <br>
   Talk to seller
   <br>
   <img alt="talkToSeller" title="talkToSeller" src="./assets/talkToSeller.png" />
