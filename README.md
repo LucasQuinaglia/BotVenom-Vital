@@ -14,25 +14,25 @@
   <br>
   <img alt="Welcome" title="Welcome" src="./assets/welcome.png" />
   <br>
-  Menu
+  Budget
   <br>
-  <img alt="Menu" title="Menu" src="./assets/budget.png" />
+  <img alt="Budget" title="Budget" src="./assets/budget.png" />
   <br>
-  Order
+  Attend
   <br>
-  <img alt="Order" title="Order" src="./assets/attend.png" />
+  <img alt="Attend" title="Attend" src="./assets/attend.png" />
   <br>
   Address
   <br>
   <img alt="Address" title="Address" src="./assets/address.png" />
   <br>
-  Bill
+  Talk to seller
   <br>
-  <img alt="Bill" title="Bill" src="./assets/bill.png" />
+  <img alt="talkToSeller" title="talkToSeller" src="./assets/talkToSeller.png" />
   <br>
-  Assistant
+  Doubt
   <br>
-  <img alt="Assistant" title="Assistant" src="./assets/assistant.png" />
+  <img alt="doubt" title="doubt" src="./assets/doubt.png" />
   <br>
 </h1>
 
