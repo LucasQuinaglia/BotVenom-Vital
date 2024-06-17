@@ -1,44 +1,52 @@
-import { VenomBot } from '../venom.js'
-import { storage } from '../storage.js'
-import { STAGES } from './index.js'
+import { VenomBot } from '../venom.js';
+import { storage } from '../storage.js';
+import { STAGES } from './index.js';
 
 export const stageTwo = {
   async exec(params) {
-    const message = params.message.trim();
-    const isMsgValid = /[ABC]/.test(message.toUpperCase());
+    const from = params.from;
+    const message = params.message.trim().toUpperCase();
+    const isMsgValid = /[AEIOU]/.test(message);
+    
+    let msg;
 
-    let msg = '❌ *Digite uma opção válida, por favor.* \n 2.js';
+    // Inicialize o storage para o usuário, se ainda não estiver inicializado
+    if (!storage[from]) {
+      storage[from] = { stage: STAGES.INITIAL, finalStage: {}, beingAttended: false };
+    }
 
-    if (isMsgValid) {
-      if (['CANCELAR'].includes(message)) {
-        const option = options[message]();
+    if (!isMsgValid) {
+      msg = '❌ *Digite uma opção válida, por favor.*';
+    } else {
+      if (message === 'CANCELAR') {
+        const option = options['CANCELAR']();
         msg = option.message;
-        storage[params.from].stage = option.nextStage;
+        storage[from].stage = option.nextStage || STAGES.INITIAL;
+        storage[from].beingAttended = false; // Atendimento cancelado
       } else {
-        msg =
-            `✅*BELEZA!* Estarei te encaminhando para um consultor de venda \n\n` +
-            '\n\n ' +
-            '```⏳ Carregando...``` \n\n' +
-            '```Para cancelar digite *CANCELAR* a qualquer momento.```'
-      }
-
-      if (storage[params.from].stage === STAGES.INITIAL) {
-        storage[params.from].itens = [];
+        msg = 
+          '✅*BELEZA!* Estarei te encaminhando para um consultor de venda \n\n' +
+          '\n\n ' +
+          '```⏳ Carregando...```';
+        storage[from].stage = STAGES.ATTEND;
       }
     }
 
-    await VenomBot.getInstance().sendText({ to: params.from, message: msg });
+    // Enviar a mensagem
+    await VenomBot.getInstance().sendText({ to: from, message: msg });
+
+    console.log('Próximo estágio:', storage[from].stage);
   },
 };
-
 
 const options = {
   'CANCELAR': () => {
     const message =
-      '🔴 Atendimento *CANCELADO* com sucesso. \n\n ```Volte Sempre!```'
+      '🔴 Atendimento *CANCELADO* com sucesso. \n\n ```Volte Sempre!```';
 
     return {
-      message
-    }
+      message,
+      nextStage: STAGES.INITIAL, // Defina o estágio correto após o cancelamento
+    };
   },
-}
+};

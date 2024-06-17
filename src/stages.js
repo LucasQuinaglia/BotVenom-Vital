@@ -4,6 +4,7 @@ import {
   stageTwo,
   stageThree,
   finalStage,
+  stageAttend,
 } from './stages/index.js'
 
 import { storage } from './storage.js'
@@ -28,6 +29,10 @@ export const stages = [
   {
     descricao: 'Assistent',
     stage: finalStage,
+  }, 
+  {
+    descricao: 'Attend',
+    stage: stageAttend,
   },
 ]
 
@@ -37,9 +42,7 @@ export function getStage({ from }) {
   }
 
   storage[from] = {
-    stage: 0,
-    itens: [],
-    address: '',
+    stage: 0
   }
 
   return storage[from].stage
