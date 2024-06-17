@@ -67,7 +67,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
-<img src='me.png'>
+<img src="me.png" width="220" >
 
 Done by Lucas Hoepers <3
 
