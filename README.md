@@ -61,14 +61,11 @@ $ yarn dev
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Node.js](https://nodejs.org/en/)
+- [Python](https://www.python.org)
 
 ### Autor
 
 ---
-
-<a href="https://juniorwmr.github.io/">
- <img style="border-radius: 30;" src="https://juniorwmr.github.io/images/washington-muniz.jpg" width="100px;" alt=""/>
- <br />
 
 Done by Lucas Hoepers <3
 
