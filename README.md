@@ -71,6 +71,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Done by Lucas Hoepers <3
 
+[![Linkedin Badge](https://img.shields.io/badge/-Lucas Hoepers-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/juniorwmr/)](https://www.linkedin.com/in/lucas-hoepers-quinaglia-365b93238/)
+[![Gmail Badge](https://img.shields.io/badge/-lucas.hoepers.quinaglia@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lucas.hoepers.quinaglia@gmail.com)](mailto:lucas.hoepers.quinaglia@gmail.com)
+
 
 Thanks to Washington Muniz, this project was based on his project, please consider taking a look at his social media
 
