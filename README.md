@@ -13,9 +13,9 @@
   Welcome
   <img alt="Welcome" title="Welcome" src="./assets/welcome.png" />
   Menu
-  <img alt="Menu" title="Menu" src="./assets/menu.png" />
+  <img alt="Menu" title="Menu" src="./assets/budget.png" />
   Order
-  <img alt="Order" title="Order" src="./assets/order.png" />
+  <img alt="Order" title="Order" src="./assets/attend.png" />
   Address
   <img alt="Address" title="Address" src="./assets/address.png" />
   Bill
