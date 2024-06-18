@@ -12,7 +12,7 @@ def load_data():
             return []
         with open(file_path, 'r') as file:
             data_list = json.load(file)
-            return data_list
+            return [int(item['stage:']) - 4 for item in data_list]  # Subtract 4 from each item
     except FileNotFoundError:
         messagebox.showerror("Error", "Data file not found.")
         return []
@@ -35,7 +35,7 @@ def add_item():
         listbox.insert(tk.END, item)
         entry.delete(0, tk.END)
         # Atualiza e salva a lista de dados
-        data_list.append(item)
+        data_list.append(int(item['stage:']) - 4)  # Subtract 4 from the item
         save_data(data_list)
     else:
         messagebox.showwarning("Warning", "Please enter an item.")

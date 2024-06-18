@@ -5,6 +5,10 @@ import { STAGES } from './index.js'
 export const initialStage = {
   async exec({ from }) {
     storage[from].stage = STAGES.BUDGET
+
+    console.log(from)
+    console.log(storage)
+    console.log(storage[from])
     
     const venombot = await VenomBot.getInstance()
     

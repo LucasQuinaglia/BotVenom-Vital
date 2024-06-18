@@ -34,8 +34,6 @@ export const stageTwo = {
 
     // Enviar a mensagem
     await VenomBot.getInstance().sendText({ to: from, message: msg });
-
-    console.log('Próximo estágio:', storage[from].stage);
   },
 };
 

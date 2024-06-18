@@ -11,16 +11,12 @@ export const stageAttend = {
       const clients = await VenomBot.getInstance().getAllChatIds();
 
       const client = clients.find((client) => client === from);
-
-      console.log('Client:', client);
       
       // Obtenha informações de contato
       const contact = await VenomBot.getInstance().getContact(client);
 
-      console.log('Contact:', contact);
-
       // Crie a lista de dados
-      const dataList = [`👤 Cliente: ${contact.name}, ${storage[from].stage}`];
+      const dataList = [`👤 Cliente: ${contact.name}, stage: ${storage[from].stage}, id: ${from}`];
 
       // Caminho do arquivo original
       const originalFilePath = 'C:\\Users\\lucas_xln2bob\\Desktop\\BotVenom-Vital\\src\\stages\\data.json';
