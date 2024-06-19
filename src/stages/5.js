@@ -19,7 +19,7 @@ export const stageAttend = {
       storage[clientId] = storage[clientId];
 
       // Verifique o stage do cliente no arquivo JSON para decidir se deve ou não enviar mensagem
-      if (clientData['👤 Cliente'] && clientData['👤 Cliente'][clientId] && clientData['👤 Cliente'][clientId]['stage'] == '1') {
+      if (clientData['👤 Cliente'] && clientData['👤 Cliente'][clientId] && clientData['👤 Cliente'][clientId]['stage'] == '0') {
         const endMessage = '🔴 Atendimento ENCERRADO. \n\n ```Volte Sempre!```';
         await venombot.sendText({ to: clientId, message: endMessage });
 

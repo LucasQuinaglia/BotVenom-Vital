@@ -29,7 +29,7 @@ def end_attendance():
             data = load_data()
             if data and '👤 Cliente' in data:
                 # Atualizar o stage do cliente para 1
-                data['👤 Cliente'][selected_client]['stage'] = '1'
+                data['👤 Cliente'][selected_client]['stage'] = '0'
                 # Atualizar o arquivo JSON
                 with open(json_file_path, 'w', encoding='utf-8') as file:
                     json.dump(data, file, ensure_ascii=False, indent=2)
