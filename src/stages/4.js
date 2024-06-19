@@ -31,7 +31,8 @@ export const finalStage = {
 
     const options = {
       1: async () => {
-        const message = `
+        const message = 
+        `
           Este é o contato do vendedor Alex. 📞\n
           Só mandar uma mensagem pra ele que ele te atende assim que possível. 📲
         `;
@@ -45,7 +46,8 @@ export const finalStage = {
         };
       },
       2: async () => {
-        const message = `
+        const message = 
+        `
           Este é o contato do vendedor Daniel. 📞\n
           Só mandar uma mensagem pra ele que ele te atende assim que possível. 📲
         `;
@@ -59,8 +61,9 @@ export const finalStage = {
         };
       },
       3: async () => {
-        const message = `
-          ----Este já é o número da Débora---\n
+        const message = 
+        `
+          Este já é o número da Débora \n
           Só aguardar um pouco que ela te atende assim que possível. 📲
         `;
         return {
