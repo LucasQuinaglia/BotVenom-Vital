@@ -30,15 +30,6 @@ export class VenomBot {
     if (!this.#venombot) throw new Error('VenomBot not initialized.');
     return await this.#venombot.onMessage(callback);
   }
-  
-  async getAllChatIds() {
-    if (!this.#venombot) throw new Error('VenomBot not initialized.');
-
-    const chats = await this.#venombot.getAllChats();
-    const chatIds = chats.map(chat => chat.id._serialized || chat.id);
-
-    return chatIds;
-  }
 
   async getContact(id) {
     if (!this.#venombot) throw new Error('VenomBot not initialized.');
