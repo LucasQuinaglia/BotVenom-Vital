@@ -10,7 +10,7 @@ export const stageAttend = {
       const venombot = await VenomBot.getInstance();
 
       // Carregue o arquivo JSON existente
-      const originalFilePath = 'C:\\Users\\lucas_xln2bob\\Desktop\\BotVenom-Vital\\src\\stages\\data.json';
+      const originalFilePath = '.\\stages\\data.json';
       const clientData = JSON.parse(fs.readFileSync(originalFilePath, 'utf-8'));
 
       const clientId = from;

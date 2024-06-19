@@ -1,8 +1,5 @@
-import fs from 'fs';
 import { VenomBot } from './venom.js';
 import { stages, getStage } from './stages.js';
-import { storage } from './storage.js';
-import { STAGES } from './stages/index.js';
 
 const main = async () => {
   try {

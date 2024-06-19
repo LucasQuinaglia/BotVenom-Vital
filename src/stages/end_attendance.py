@@ -4,7 +4,7 @@ import json
 import os
 
 # Caminho para o arquivo JSON
-json_file_path = 'C:\\Users\\lucas_xln2bob\\Desktop\\BotVenom-Vital\\src\\stages\\data.json'
+json_file_path = 'src\stages\data.json'
 
 def load_data():
     if os.path.exists(json_file_path):
