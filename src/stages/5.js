@@ -15,26 +15,29 @@ export const stageAttend = {
 
       const clientId = from;
 
-      // Verifique se o cliente está sendo atendido
-      if (storage[clientId] && storage[clientId].beingAttended) {
-        console.log('Cliente está sendo atendido');
-        return; // Não faça nada se o cliente estiver sendo atendido
-      }
-
-      // Verifique o stage do cliente no arquivo JSON
-      if (clientData['👤 Cliente'] && clientData['👤 Cliente'][clientId] && clientData['👤 Cliente'][clientId]['stage'] === '1') {
-        storage[clientId] = { stage: STAGES.INITIAL };
-        const endMessage = '🔴 Atendimento ENCERRADO. \n\n ```Volte Sempre!```';
-        await venombot.sendText(clientId, endMessage);
-        return;
-      }
-
       // Atualize o storage com as informações do cliente
-      storage[clientId] = storage[clientId] || {};
-      storage[clientId].stage = '1'; // Exemplo de atualização de estágio, ajuste conforme necessário
+      storage[clientId] = storage[clientId];
 
-      // Atualize o clientData com as novas informações
-      clientData['👤 Cliente'][clientId] = storage[clientId];
+      // Verifique o stage do cliente no arquivo JSON para decidir se deve ou não enviar mensagem
+      if (clientData['👤 Cliente'] && clientData['👤 Cliente'][clientId] && clientData['👤 Cliente'][clientId]['stage'] == '1') {
+        const endMessage = '🔴 Atendimento ENCERRADO. \n\n ```Volte Sempre!```';
+        await venombot.sendText({ to: clientId, message: endMessage });
+
+        // Reinicie o estágio do cliente para inicial
+        storage[clientId].stage = STAGES.INITIAL;
+
+        // Atualize o clientData com o novo estágio
+        clientData['👤 Cliente'][clientId].stage = STAGES.INITIAL;
+
+        // Reescreva o arquivo JSON com o estágio atualizado
+        const updatedJsonData = JSON.stringify(clientData, null, 2);
+        fs.writeFileSync(originalFilePath, updatedJsonData);
+
+        console.log('Estágio do cliente reiniciado para inicial.');
+      } else {
+        // Atualize o clientData com as informações do cliente
+        clientData['👤 Cliente'][clientId] = storage[clientId];
+      }
 
       // Caminho do arquivo temporário
       const tempFilePath = path.join(path.dirname(originalFilePath), 'tempData.json');
@@ -49,14 +52,6 @@ export const stageAttend = {
       fs.renameSync(tempFilePath, originalFilePath);
 
       console.log('✅ Dados salvos com sucesso!');
-
-      // Enviar mensagem após a atualização dos dados
-      const userMessage = 'Sua mensagem personalizada aqui'; // Defina a mensagem correta aqui
-      if (userMessage) {
-        await venombot.sendText(clientId, userMessage);
-      } else {
-        console.error('Erro ao enviar mensagem: Texto da mensagem não definido');
-      }
 
     } catch (err) {
       console.error('Erro ao salvar os dados:', err);
