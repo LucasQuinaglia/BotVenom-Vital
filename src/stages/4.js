@@ -73,6 +73,7 @@ export const finalStage = {
       },
     };
 
+    // Verificar se a mensagem é válida
     if (isMsgValid) {
       const option = await options[Number(message)]();
       responseMsg = option.message;
@@ -83,6 +84,7 @@ export const finalStage = {
 
     await VenomBot.getInstance().sendText({ to: from, message: responseMsg });
 
+    // Verificar se a mensagem é 'ENCERRAR' ou se o tempo de inatividade acabou
     if (history.endsIn < currentDate.getTime() || msg === 'ENCERRAR') {
       storage[from].stage = STAGES.INITIAL;
       await VenomBot.getInstance().sendText({

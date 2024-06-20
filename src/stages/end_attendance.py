@@ -6,6 +6,7 @@ import os
 # Caminho para o arquivo JSON
 json_file_path = 'src\stages\data.json'
 
+# Função para carregar os dados do arquivo JSON
 def load_data():
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r', encoding='utf-8') as file:
@@ -15,6 +16,7 @@ def load_data():
         messagebox.showerror("Erro", "Arquivo JSON não encontrado!")
         return None
 
+# Função para atualizar a listbox com os clientes
 def update_client_listbox():
     client_listbox.delete(0, tk.END)  # Limpa a listbox
     data = load_data()
@@ -22,6 +24,7 @@ def update_client_listbox():
         for client in data['👤 Cliente']:
             client_listbox.insert(tk.END, client)
 
+# Função para encerrar o atendimento de um cliente
 def end_attendance():
     selected_client = client_listbox.get(tk.ACTIVE)
     if selected_client:

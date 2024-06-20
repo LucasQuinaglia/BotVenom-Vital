@@ -15,6 +15,7 @@ export const stageTwo = {
       storage[from] = { stage: STAGES.INITIAL, finalStage: {}, beingAttended: false };
     }
 
+    // Verifique se a mensagem é válida
     if (!isMsgValid) {
       msg = '❌ *Digite uma opção válida, por favor.*';
     } else {
@@ -24,6 +25,7 @@ export const stageTwo = {
         storage[from].stage = option.nextStage || STAGES.INITIAL;
         storage[from].beingAttended = false; // Atendimento cancelado
       } else {
+        // Defina a mensagem de resposta
         msg = 
           '✅*BELEZA!* Estarei te encaminhando para um consultor de venda \n\n' +
           '\n\n ' +
