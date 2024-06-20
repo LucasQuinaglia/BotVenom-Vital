@@ -39,28 +39,28 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Node.js](https://nodejs.org/en/)
 - [Python](https://www.python.org)
 
-<h1>Como preparar o programa para execução 😎:</h1>
+Como preparar o programa para execução 😎:
 
 Primeiramente, terá de clonar este repositório:
 
-<h4><i>gh repo clone LucasQuinaglia/BotVenom-Vital</i></h4>
+<i>gh repo clone LucasQuinaglia/BotVenom-Vital</i>
 
 Logo após, terá de instalar as dependências do programa
 
-<h4><i>npm i</i></h4>
+<i>npm i</i>
 
 E é pra estar tudo certo, para um melhor desfruto das funcionalidades,
 recomendo ser usado: 
 
-<h4><i>node ./server.js</i> </h4>
+<i>node ./server.js</i>
 
 Para ser usado, terá de definir o diretório para a pasta src 👾:
 
-<h4><i>cd C:/onde/se/encontra/seu/repositorio/src</i></h4>
+<i>cd C:/onde/se/encontra/seu/repositorio/src</i>
 
 Mas caso prefira, pode ser usado:
 
-<h4><i>npm run dev</i></h4>
+<i>npm run dev</i>
 
 (usei principalmente o "node ./server.js", pelo fato de com o "npm run dev"
 ele reiniciar o bot toda vez que o data.json era reescrito com as informações
